@@ -1,0 +1,204 @@
+.item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 28rpx 28rpx 26rpx 28rpx;
+  position: relative;
+  background-color: white;
+  /* background-color:rgba(88,158,230,0.1); *//* border: 1px solid black; */
+}
+
+.item-container-active {
+  background-color:rgba(88,158,230,0.1);/* border: 1px solid black; */
+}
+
+/* .item-container:active {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 28rpx 28rpx 26rpx 28rpx;
+  position: relative;
+  background-color: #e9e9e9;
+} */
+
+/* pages/message/component/item.wxss */
+
+.item-container .header {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.item-container .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 18rpx;
+}
+
+.item-container .content .who {
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 1);
+  line-height: 40rpx;
+}
+
+.item-container .content .message {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  line-height: 40rpx;
+  margin-left: 16rpx;
+
+  /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+
+}
+
+.item-container .content .time-root {
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-container .content .time-root .time {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 32rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.item-container .content .time-root .zan {
+  font-size: 22rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  line-height: 32rpx;
+  margin-left: 40rpx;
+}
+
+.item-container .content .more {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 30rpx;
+  margin-top: 24rpx;
+}
+
+/* .oneline {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+.subitem {
+  display: flex;
+  flex-direction: row;
+  padding: 8rpx 0 6rpx 0;
+  background-color: transparent;
+}
+
+.subitem-active {
+  background-color:rgba(88,158,230,0.1);
+}
+
+/* .item-container:active {
+  display: flex;
+  flex-direction: row;
+  padding: 8rpx 0 6rpx 0;
+  background-color: #e9e9e9;
+} */
+
+.subitem .sub-header {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.subitem .content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16rpx;
+}
+
+.subitem .content .time {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30rpx;
+  margin-top: 16rpx;
+}
+
+.huifu {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 40rpx;
+  margin-left: 4rpx;
+  margin-right: 4rpx;
+  display: inline-block;
+}
+
+.dianzan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.dianzan .image {
+  width: 30rpx;
+  height: 30rpx;
+}
+/**评论详情相关*/
+.zhankai-root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.zhankai-tx {
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(153, 153, 153, 1);
+  line-height: 34rpx;
+}
+
+.arrow-bottom {
+  height: 10rpx;
+  width: 20rpx;
+  margin-left: 8rpx;
+  transition: all 0.3s;
+}
+
+.rotate-up {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+
+.rotate-down {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+}

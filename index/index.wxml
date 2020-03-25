@@ -1,0 +1,1 @@
+<m-item style="width:100%;" wx:for="{{commentList}}" wx:key="index" comment="{{item}}" index="{{index}}" bindhandleItemLike="handleItemLike"></m-item>

@@ -1,0 +1,42 @@
+<wxs src="./format.wxs" module="ft"></wxs>
+
+<view class="item-container {{comment.active?'item-container-active':''}}">
+  <image class="header" src="{{comment.avatar}}" mode="aspectFill"></image>
+  <view class="content" bindtap="handleClick" data-comment="{{comment}}">
+    <view>
+      <text class="who">{{comment.nickname}}</text>
+      <text class="who" wx:if="{{comment.authorReply}}">(作者)</text>
+      <text class="message">{{comment.comment}}</text>
+    </view>
+    <!-- <view class="zhankai-root">
+        <text class="zhankai-tx">展开</text>
+        <image class="arrow-bottom" src="/assets/image/fanhui.png"></image>
+      </view> -->
+    <view class="time-root">
+      <text class="time">{{ft.format(comment.createTime)}}</text>
+      <text class="zan" wx:if="{{comment.likeCount>0}}">{{comment.likeCount}}个赞</text>
+    </view>
+    <text class="more" catchtap="handlerPreLoadSub" data-comment="{{comment}}" wx:if="{{(comment.items[0].beforeCount)>0}}" data-parentindex="{{index}}">——查看之前回复（{{comment.items[0].beforeCount}}）</text>
+    <view style="height:16rpx;width:260rpx;" catchtap="catch"></view>
+    <!--子评论start-->
+    <view class="subitem {{item.active?'subitem-active':''}}" wx:for="{{comment.items}}" wx:key="index" catchtap="handlerSubItemClick" data-comment="{{item}}" data-parentuserid="{{comment.userId}}" wx:for-index="subIndex" data-parentindex="{{index}}">
+      <image class="sub-header" src="{{item.avatar}}"></image>
+      <view class="content">
+        <view>
+          <text class="who">{{item.nickname}}</text>
+          <text class="who" wx:if="{{item.authorReply}}">(作者)</text>
+          <text class="huifu">回复</text>
+          <text class="who">{{item.toUserNickname}}</text>
+          <text class="message">{{item.comment}}</text>
+        </view>
+        <text class="time">{{item.createTime}}</text>
+      </view>
+    </view>
+    <text class="more" catchtap="handlerLoadMoreSub" data-comment="{{comment}}" wx:if="{{(comment.items[comment.items.length-1].afterCount)>0}}" data-parentindex="{{index}}">——查看更多回复（{{comment.items[comment.items.length-1].afterCount}}）</text>
+    <!--子评论end-->
+    <text class="more" catchtap="handlerLoadMoreSub" data-comment="{{comment}}" wx:if="{{(!comment.items||comment.items.length==0)&&comment.itemsCount&&comment.itemsCount!==0}}" data-parentindex="{{index}}">——查看更多回复（{{comment.itemsCount}}）</text>
+  </view>
+  <view class="dianzan" catchtap="handleItemLike" data-comment="{{comment}}" data-parentindex="{{index}}">
+    <image class="image" src="{{comment.liked?'/assets/icon_dianzan_pre.png':'/assets/icon_dianzan_nor.png'}}"></image>
+  </view>
+</view>

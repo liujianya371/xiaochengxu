@@ -1,0 +1,14 @@
+var formatTime = function (timestamp) {
+  var date = getDate();
+  date.setTime(timestamp);
+  return formatNumber(date.getMonth() + 1) + "-" + formatNumber(date.getDate());
+}
+
+var formatNumber = function(n){
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+module.exports = {
+  format: formatTime
+}
